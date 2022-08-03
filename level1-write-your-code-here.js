@@ -139,6 +139,21 @@ function givePotion7Answer(randomStr) {
     return sum;
 };
 
+function givePotion8Answer(number) {
+    isPrime = false;
+    let divisorNum = 0;
+    for (let i = 0; i < number; i++) {
+        if (number % i === 0) {
+            divisorNum += i; 
+        };
+    };
+    if (divisorNum > 2) {
+    } else {
+        isPrime = true;
+    };
+    return isPrime;
+};
+
 function givePotion10Answer(char, str) {
     notFound = -1;
     for (let i = 0; i < str.length; i++) {
