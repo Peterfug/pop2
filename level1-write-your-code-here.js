@@ -138,7 +138,6 @@ function givePotion10Answer(char, str) {
 };
 
 function givePotion11Answer(str, oldChar, newChar) {
-    console.log(str, oldChar, newChar);
     let newStr = '';
     for (let i = 0; i < str.length; i++) {
         if (str[i] !== oldChar) {
