@@ -113,8 +113,9 @@ function givePotion6Answer(asterisknumber) {
     let characters = asterisknumber.split('*');
     let sum = 0;
     for (let i = 0; i < (characters.length); i++) {
-        Number(characters[i]);
-        sum += characters[i];
+        if (characters[i] !== '') {
+            sum += parseInt(characters[i]);
+        };
     };
     return sum;
 };
