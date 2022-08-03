@@ -137,14 +137,16 @@ function givePotion10Answer(char, str) {
     return notFound;
 };
 
-/* function givePotion11Answer(str, oldChar, newChar) {
+function givePotion11Answer(str, oldChar, newChar) {
     console.log(str, oldChar, newChar);
+    let newStr = '';
     for (let i = 0; i < str.length; i++) {
-        if (letters[i] !== oldChar) {
-            newStr += letters[i];
+        if (str[i] !== oldChar) {
+            newStr += str[i];
         }
         else {
             newStr += newChar;
         };
     };
-}; */
+    return newStr;
+};
