@@ -127,6 +127,18 @@ function givePotion6Answer(asterisknumber) {
     return sum;
 };
 
+function givePotion7Answer(randomStr) {
+    let characters = randomStr.split('');
+    let sum = 0;
+    for (let i = 0; i < (characters.length); i++) {
+        if (isNaN(characters[i])) {
+        } else {
+            sum += parseInt(characters[i]);
+        }
+    };
+    return sum;
+};
+
 function givePotion10Answer(char, str) {
     notFound = -1;
     for (let i = 0; i < str.length; i++) {
