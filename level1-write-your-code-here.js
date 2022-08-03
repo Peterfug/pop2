@@ -154,6 +154,26 @@ function givePotion8Answer(number) {
     return isPrime;
 };
 
+function givePotion9Answer(array) {
+    let sum = 0;
+    smallest = Number.POSITIVE_INFINITY;
+    secondSmallest = Number.POSITIVE_INFINITY;
+    for (let i = 0; i < array.length; i++){
+        if (array[i] < smallest) {
+            smallest = array[i];
+        };
+    };
+    for (let i = 0; i < array.length; i++){
+        if (array[i] < secondSmallest) {
+            if (array[i] > smallest) {
+                secondSmallest = array[i];
+            };
+        };
+    };
+    sum = smallest + secondSmallest;
+    return sum;
+};
+
 function givePotion10Answer(char, str) {
     notFound = -1;
     for (let i = 0; i < str.length; i++) {
