@@ -109,6 +109,13 @@ function givePotion4Answer(letters, uppers) {
   return upp.join("");
 }
 
+function givePotion5Answer(hours, minutes, seconds, addSeconds) {
+    const  date = new Date(2022, 8, 3, hours, minutes, seconds);
+    date.setSeconds(date.getSeconds() + addSeconds);
+    newTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    return newTime;
+};
+
 function givePotion6Answer(asterisknumber) {
     let characters = asterisknumber.split('*');
     let sum = 0;
@@ -118,11 +125,4 @@ function givePotion6Answer(asterisknumber) {
         };
     };
     return sum;
-};
-
-function givePotion5Answer(hours, minutes, seconds, addSeconds) {
-    const  date = new Date(2022, 8, 3, hours, minutes, seconds);
-    date.setSeconds(date.getSeconds() + addSeconds);
-    newTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-    return newTime;
 };
