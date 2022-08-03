@@ -110,14 +110,10 @@ function givePotion4Answer(letters, uppers) {
 }
 
 function givePotion6Answer(asterisknumber) {
-    let characters = asterisknumber.split('');
+    let characters = asterisknumber.split('*');
     let sum = 0;
-    for (let i = 0; i < (asterisknumber.length + 2); i++) {
-        if(i % 2 === 0) {
-            if (i / 2 > 0){
-                sum += characters[i-1];
-            };
-        };
+    for (let i = 0; i < (characters.length); i++) {
+        sum += characters[i];
     };
     return sum;
 };
