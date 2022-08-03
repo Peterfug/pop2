@@ -113,7 +113,15 @@ function givePotion6Answer(asterisknumber) {
     let characters = asterisknumber.split('*');
     let sum = 0;
     for (let i = 0; i < (characters.length); i++) {
+        Number(characters[i]);
         sum += characters[i];
     };
     return sum;
+};
+
+function givePotion5Answer(hours, minutes, seconds, addSeconds) {
+    const  date = new Date(2022, 8, 3, hours, minutes, seconds);
+    date.setSeconds(date.getSeconds() + addSeconds);
+    newTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    return newTime;
 };
