@@ -126,3 +126,25 @@ function givePotion6Answer(asterisknumber) {
     };
     return sum;
 };
+
+function givePotion10Answer(char, str) {
+    notFound = -1;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === char) {
+            return(i);
+        };
+    };
+    return notFound;
+};
+
+/* function givePotion11Answer(str, oldChar, newChar) {
+    console.log(str, oldChar, newChar);
+    for (let i = 0; i < str.length; i++) {
+        if (letters[i] !== oldChar) {
+            newStr += letters[i];
+        }
+        else {
+            newStr += newChar;
+        };
+    };
+}; */
