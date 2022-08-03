@@ -109,20 +109,25 @@ function givePotion3Answer(list) {
   return upp.join("");
 } */
 
-function givePotion4Answer(stringCapitalise, letters) {
-    console.log(stringCapitalise, letters);
-    console.log(stringCapitalise[0].toUpperCase(0));
-    for (let i = 0; i < stringCapitalise.length; i++) {
-        if (stringCapitalise[i] === letters[0]) {
-            stringCapitalise[i].toUpperCase();
-        };
+function givePotion4Answer(stringCapitalise, lettersArray) {
+    let smallLetters = stringCapitalise.split('');
+    let capitalisedLetters = '';
+    let capitalisedLetters_2 = '';
+    for (let i = 0; i < smallLetters.length; i++) {
+        if (smallLetters[i] === lettersArray[0]) {
+            capitalisedLetters += smallLetters[i].toUpperCase();
+        } else {
+            capitalisedLetters += smallLetters[i];
+        }
     };
-    for (let i = 0; i < stringCapitalise.length; i++) {
-        if (stringCapitalise[i] === letters[1]) {
-            stringCapitalise[i].toUpperCase();
-        };
+    for (let i = 0; i < capitalisedLetters.length; i++) {
+        if (capitalisedLetters[i] === lettersArray[1]) {
+            capitalisedLetters_2 += capitalisedLetters[i].toUpperCase();
+        } else {
+            capitalisedLetters_2 += capitalisedLetters[i];
+        }
     };
-    return stringCapitalise;
+    return capitalisedLetters_2;
 };
 
 function givePotion5Answer(hours, minutes, seconds, addSeconds) {
