@@ -89,7 +89,7 @@ function givePotion3Answer(list) {
   return hnumb;
 }
 
-function givePotion4Answer(letters, uppers) {
+/* function givePotion4Answer(letters, uppers) {
   const upp = [];
   const lett = letters.split("");
 
@@ -107,7 +107,23 @@ function givePotion4Answer(letters, uppers) {
     }
   }
   return upp.join("");
-}
+} */
+
+function givePotion4Answer(stringCapitalise, letters) {
+    console.log(stringCapitalise, letters);
+    console.log(stringCapitalise[0].toUpperCase(0));
+    for (let i = 0; i < stringCapitalise.length; i++) {
+        if (stringCapitalise[i] === letters[0]) {
+            stringCapitalise[i].toUpperCase();
+        };
+    };
+    for (let i = 0; i < stringCapitalise.length; i++) {
+        if (stringCapitalise[i] === letters[1]) {
+            stringCapitalise[i].toUpperCase();
+        };
+    };
+    return stringCapitalise;
+};
 
 function givePotion5Answer(hours, minutes, seconds, addSeconds) {
     const  date = new Date(2022, 8, 3, hours, minutes, seconds);
