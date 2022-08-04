@@ -63,6 +63,7 @@ function level2Move(
 
   // to finally reach the princess the prince should move down and sometimes
   // to left or right, depending on the level
+
 }
 
 function down(elementDownOfPrince) {
@@ -136,3 +137,4 @@ function ZigZag(elementDownOfPrince, elementUpOfPrince) {
     fourthTask = true;
   }
 }
+

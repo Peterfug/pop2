@@ -14,7 +14,19 @@
 */
 
 function level3Move(gameMap) {
-    console.dir(gameMap);
-    return ['down', 'down', 'down'];
+    /* console.dir(gameMap);
+    console.log(gameMap[0]);
+    console.log(gameMap[0].length);
+    console.log(gameMap[2][1]); */
+    
+    let numberOfDown = [];
+    for (let i = 0; i < gameMap.length - 3; i++) {
+        numberOfDown.push('down');
+    };
+    for (let i = 0; i < gameMap[0].length -3; i++) {
+        numberOfDown.push('right');
+    };
+    console.log(numberOfDown);
+    return numberOfDown;
 }
 
