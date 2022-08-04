@@ -13,30 +13,13 @@
 
     HINT: use the BROWSER DEVELOPER TOOLS.
 */
-let moveDown = true;
-let moveRight = true;
-let moveUp = true;
-let moveZigZag = true;
+    let moveDown = true;
+    let moveRight = true;
+    let moveUp = true;
+    let moveZigZag = true;
 
 function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince) {
-
-  if (moveDown) {
-    down(elementDownOfPrince);
-  };
-
-  if (moveRight) {
-    right(elementRightOfPrince);
-  };
-
-  if (moveUp) {
-    up(elementUpOfPrince);
-  };
-
-  if (moveZigZag) {
-    ZigZag(elementLeftOfPrince);
-  };
-
-  // the prince should move down first, the problem is that the amount
+      // the prince should move down first, the problem is that the amount
   // of times to move changes from one level to another. Try to find out
   // based on the variables "elementLeftOfPrince", "elementRightOfPrince",
   // "elementUpOfPrince", "elementDownOfPrince"
@@ -57,7 +40,25 @@ function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince
 
   // to finally reach the princess the prince should move down and sometimes
   // to left or right, depending on the level
-}
+
+    //console.log(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince);
+
+    if (moveDown) {
+    down(elementDownOfPrince);
+    };
+
+    if (moveRight) {
+    right(elementRightOfPrince);
+    };
+
+    if (moveUp) {
+    up(elementUpOfPrince);
+    };
+
+    if (moveZigZag) {
+    ZigZag(elementLeftOfPrince);
+    };
+};
 
 function down(elementDownOfPrince) {
   if (elementDownOfPrince === 11) {
@@ -105,7 +106,8 @@ function up(elementUpOfPrince) {
 };
 
 function ZigZag(elementLeftOfPrince) {
-  if (elementLeftOfPrince === 11) {
+    console.log('lefut');
+    if (elementLeftOfPrince === 11) {
     for (let i = 0; i < 2; i++) {
         moveDirection("left");
     };
@@ -118,7 +120,7 @@ function ZigZag(elementLeftOfPrince) {
     moveRight = false;
     moveUp = false;
     moveZigZag = true;
-  } else {
+    } else {
     moveDown = false;
     moveRight = false;
     moveUp = false;
