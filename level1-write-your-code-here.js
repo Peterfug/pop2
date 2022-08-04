@@ -217,3 +217,16 @@ function givePotion11Answer(str, oldChar, newChar) {
     };
     return newStr;
 };
+
+function givePotion12Answer(array) {
+    console.log(array);
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+            sum += -1 * array[i];
+        } else {
+            sum += array[i];
+        };
+    };
+    return sum;
+};
