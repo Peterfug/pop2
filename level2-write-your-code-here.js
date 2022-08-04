@@ -56,7 +56,7 @@ function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince
     };
 
     if (moveZigZag) {
-    ZigZag(elementLeftOfPrince);
+    ZigZag(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince);
     };
 };
 
@@ -105,17 +105,9 @@ function up(elementUpOfPrince) {
   };
 };
 
-function ZigZag(elementLeftOfPrince) {
-    console.log(elementLeftOfPrince);
+function ZigZag(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince) {
+    console.log(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince);
     if (elementLeftOfPrince === 11) {
-    for (let i = 0; i < 2; i++) {
-        moveDirection("left");
-    };
-    moveDirection("up");
-    for (let i = 0; i < 2; i++) {
-        moveDirection("left");
-    };
-    moveDirection("down");
     moveDown = false;
     moveRight = false;
     moveUp = false;
