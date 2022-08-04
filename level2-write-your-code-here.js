@@ -14,10 +14,14 @@
     HINT: use the BROWSER DEVELOPER TOOLS.
 */
 
+let numberOfDown = 0;
+let numberOfRight = 0;
 
 function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince) {
-    down(elementDownOfPrince);
-    right(elementRightOfPrince)
+    
+    moveDown(elementDownOfPrince);
+    moveRight(elementRightOfPrince);
+    //moveUp(elementUpOfPrince);
     
     // the prince should move down first, the problem is that the amount
     // of times to move changes from one level to another. Try to find out
@@ -45,16 +49,24 @@ function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince
 }
 
 
-function down(elementDownOfPrince) {
-    if (elementDownOfPrince < 12) {
+function moveDown(elementDownOfPrince) {
+    if (elementDownOfPrince === 11) {
         moveDirection('down');
-    
-        }
-    }
+        numberOfDown += 1;
+    };
+    console.log(numberOfDown);
+};
 
-function right(elementRightOfPrince) {
-        if (elementRightOfPrince < 12) {
-            moveDirection('right')
-        }
-        
-    }
+function moveRight(elementRightOfPrince) {
+    if (elementRightOfPrince === 11) {
+        moveDirection('right');
+        numberOfRight += 1;
+    };
+    console.log(numberOfRight);
+};
+ 
+/* function moveUp(elementUpOfPrince) {
+    if (elementUpOfPrince === 11 && functionRun > 20) {
+        moveDirection('up');
+    };
+}; */
