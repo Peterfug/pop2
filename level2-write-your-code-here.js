@@ -16,6 +16,9 @@
 
 
 function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince) {
+    down(elementDownOfPrince);
+    right(elementRightOfPrince)
+    
     // the prince should move down first, the problem is that the amount
     // of times to move changes from one level to another. Try to find out
     // based on the variables "elementLeftOfPrince", "elementRightOfPrince",
@@ -41,3 +44,17 @@ function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince
     // to left or right, depending on the level
 }
 
+
+function down(elementDownOfPrince) {
+    if (elementDownOfPrince < 12) {
+        moveDirection('down');
+    
+        }
+    }
+
+function right(elementRightOfPrince) {
+        if (elementRightOfPrince < 12) {
+            moveDirection('right')
+        }
+        
+    }
