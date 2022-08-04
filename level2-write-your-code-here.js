@@ -106,7 +106,7 @@ function up(elementUpOfPrince) {
 };
 
 function ZigZag(elementLeftOfPrince) {
-    console.log('lefut');
+    console.log(elementLeftOfPrince);
     if (elementLeftOfPrince === 11) {
     for (let i = 0; i < 2; i++) {
         moveDirection("left");
@@ -120,6 +120,7 @@ function ZigZag(elementLeftOfPrince) {
     moveRight = false;
     moveUp = false;
     moveZigZag = true;
+    console.log('ZigZaglefut');
     } else {
     moveDown = false;
     moveRight = false;
