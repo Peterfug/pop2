@@ -45,21 +45,43 @@ function getZigZagMovementDirection(step) {
     */
 }
 
+let change = true;
 function manuallyControl(key) {
-  if (key === "ArrowRight") {
-    moveDirection("right");
+  if (key === "KeyQ") {
+    change = !change;
   }
+  if (change) {
+    if (key === "ArrowRight") {
+      moveDirection("right");
+    }
 
-  if (key === "ArrowLeft") {
-    moveDirection("left");
-  }
+    if (key === "ArrowLeft") {
+      moveDirection("left");
+    }
 
-  if (key === "ArrowUp") {
-    moveDirection("up");
-  }
+    if (key === "ArrowUp") {
+      moveDirection("up");
+    }
 
-  if (key === "ArrowDown") {
-    moveDirection("down");
+    if (key === "ArrowDown") {
+      moveDirection("down");
+    }
+  } else {
+    if (key === "KeyD") {
+      moveDirection("right");
+    }
+
+    if (key === "KeyA") {
+      moveDirection("left");
+    }
+
+    if (key === "KeyW") {
+      moveDirection("up");
+    }
+
+    if (key === "KeyS") {
+      moveDirection("down");
+    }
   }
 
   // when moving the prince using the keyboard you can call the already implemented
@@ -110,123 +132,122 @@ function givePotion3Answer(list) {
 } */
 
 function givePotion4Answer(stringCapitalise, lettersArray) {
-    let smallLetters = stringCapitalise.split('');
-    let capitalisedLetters = '';
-    let capitalisedLetters_2 = '';
-    for (let i = 0; i < smallLetters.length; i++) {
-        if (smallLetters[i] === lettersArray[0]) {
-            capitalisedLetters += smallLetters[i].toUpperCase();
-        } else {
-            capitalisedLetters += smallLetters[i];
-        }
-    };
-    for (let i = 0; i < capitalisedLetters.length; i++) {
-        if (capitalisedLetters[i] === lettersArray[1]) {
-            capitalisedLetters_2 += capitalisedLetters[i].toUpperCase();
-        } else {
-            capitalisedLetters_2 += capitalisedLetters[i];
-        }
-    };
-    return capitalisedLetters_2;
-};
+  let smallLetters = stringCapitalise.split("");
+  let capitalisedLetters = "";
+  let capitalisedLetters_2 = "";
+  for (let i = 0; i < smallLetters.length; i++) {
+    if (smallLetters[i] === lettersArray[0]) {
+      capitalisedLetters += smallLetters[i].toUpperCase();
+    } else {
+      capitalisedLetters += smallLetters[i];
+    }
+  }
+  for (let i = 0; i < capitalisedLetters.length; i++) {
+    if (capitalisedLetters[i] === lettersArray[1]) {
+      capitalisedLetters_2 += capitalisedLetters[i].toUpperCase();
+    } else {
+      capitalisedLetters_2 += capitalisedLetters[i];
+    }
+  }
+  return capitalisedLetters_2;
+}
 
 function givePotion5Answer(hours, minutes, seconds, addSeconds) {
-    const  date = new Date(2022, 8, 3, hours, minutes, seconds);
-    date.setSeconds(date.getSeconds() + addSeconds);
-    newTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-    return newTime;
-};
+  const date = new Date(2022, 8, 3, hours, minutes, seconds);
+  date.setSeconds(date.getSeconds() + addSeconds);
+  newTime = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  return newTime;
+}
 
 function givePotion6Answer(asterisknumber) {
-    let characters = asterisknumber.split('*');
-    let sum = 0;
-    for (let i = 0; i < (characters.length); i++) {
-        if (characters[i] !== '') {
-            sum += parseInt(characters[i]);
-        };
-    };
-    return sum;
-};
+  let characters = asterisknumber.split("*");
+  let sum = 0;
+  for (let i = 0; i < characters.length; i++) {
+    if (characters[i] !== "") {
+      sum += parseInt(characters[i]);
+    }
+  }
+  return sum;
+}
 
 function givePotion7Answer(randomStr) {
-    let characters = randomStr.split('');
-    let sum = 0;
-    for (let i = 0; i < (characters.length); i++) {
-        if (isNaN(characters[i])) {
-        } else {
-            sum += parseInt(characters[i]);
-        }
-    };
-    return sum;
-};
+  let characters = randomStr.split("");
+  let sum = 0;
+  for (let i = 0; i < characters.length; i++) {
+    if (isNaN(characters[i])) {
+    } else {
+      sum += parseInt(characters[i]);
+    }
+  }
+  return sum;
+}
 
 function givePotion8Answer(number) {
-    isPrime = false;
-    let divisorNum = 0;
-    for (let i = 0; i < number; i++) {
-        if (number % i === 0) {
-            divisorNum += i; 
-        };
-    };
-    if (divisorNum > 2) {
-    } else {
-        isPrime = true;
-    };
-    return isPrime;
-};
+  isPrime = false;
+  let divisorNum = 0;
+  for (let i = 0; i < number; i++) {
+    if (number % i === 0) {
+      divisorNum += i;
+    }
+  }
+  if (divisorNum > 2) {
+  } else {
+    isPrime = true;
+  }
+  return isPrime;
+}
 
 function givePotion9Answer(array) {
-    let sum = 0;
-    smallest = Number.POSITIVE_INFINITY;
-    secondSmallest = Number.POSITIVE_INFINITY;
-    for (let i = 0; i < array.length; i++){
-        if (array[i] < smallest) {
-            smallest = array[i];
-        };
-    };
-    for (let i = 0; i < array.length; i++){
-        if (array[i] < secondSmallest) {
-            if (array[i] > smallest) {
-                secondSmallest = array[i];
-            };
-        };
-    };
-    sum = smallest + secondSmallest;
-    return sum;
-};
+  let sum = 0;
+  smallest = Number.POSITIVE_INFINITY;
+  secondSmallest = Number.POSITIVE_INFINITY;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < secondSmallest) {
+      if (array[i] > smallest) {
+        secondSmallest = array[i];
+      }
+    }
+  }
+  sum = smallest + secondSmallest;
+  return sum;
+}
 
 function givePotion10Answer(char, str) {
-    notFound = -1;
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === char) {
-            return(i);
-        };
-    };
-    return notFound;
-};
+  notFound = -1;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === char) {
+      return i;
+    }
+  }
+  return notFound;
+}
 
 function givePotion11Answer(str, oldChar, newChar) {
-    let newStr = '';
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] !== oldChar) {
-            newStr += str[i];
-        }
-        else {
-            newStr += newChar;
-        };
-    };
-    return newStr;
-};
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== oldChar) {
+      newStr += str[i];
+    } else {
+      newStr += newChar;
+    }
+  }
+  return newStr;
+}
 
 function givePotion12Answer(array) {
-    console.log(array);
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] < 0) {
-            sum += -1 * array[i];
-        } else {
-            sum += array[i];
-        };
-    };
-    return sum;
-};
+  console.log(array);
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < 0) {
+      sum += -1 * array[i];
+    } else {
+      sum += array[i];
+    }
+  }
+  return sum;
+}

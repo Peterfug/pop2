@@ -14,27 +14,7 @@
 */
 
 function level3Move(gameMap) {
-/*     console.dir(gameMap);
-    console.log(gameMap[0]); */
-    /* console.log(gameMap[0].length);
-    console.log(gameMap[2][1]); */
-    let rownNumber = gameMap.length;
-    let columnNumber = gameMap[0].length;
-    let wichRow = 0;
-    let numberOfDown = [];
-    for (let i = 0; i < rownNumber - 3; i++) {
-        numberOfDown.push('down');
-    };
-    for (let i = 0; i < columnNumber -3; i++) {
-        numberOfDown.push('right');
-    };
-    for (let i = 0; i < rownNumber; i++) {
-        if (gameMap[i][columnNumber -2] === 13) {
-            wichRow += i;
-        };
-    };
-    //for (let i = 0; i < gameMap)
-    console.log(rownNumber, columnNumber, numberOfDown, wichRow);
-    return numberOfDown;
+    console.dir(gameMap);
+    return ['down', 'down', 'down'];
 }
 
