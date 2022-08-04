@@ -45,22 +45,45 @@ function getZigZagMovementDirection(step) {
     */
 }
 
+let change = true
 function manuallyControl(key) {
-  if (key === "ArrowRight") {
-    moveDirection("right");
+  if (key === "KeyQ"){
+    change = !change
+  } 
+  if (change) {
+    if (key === "ArrowRight") {
+      moveDirection("right");
+    }
+  
+    if (key === "ArrowLeft") {
+      moveDirection("left");
+    }
+  
+    if (key === "ArrowUp") {
+      moveDirection("up");
+    }
+  
+    if (key === "ArrowDown") {
+      moveDirection("down");
+    }
+  } else {
+    if (key === "KeyD") {
+      moveDirection("right");
+    }
+  
+    if (key === "KeyA") {
+      moveDirection("left");
+    }
+  
+    if (key === "KeyW") {
+      moveDirection("up");
+    }
+  
+    if (key === "KeyS") {
+      moveDirection("down");
+    }
   }
-
-  if (key === "ArrowLeft") {
-    moveDirection("left");
-  }
-
-  if (key === "ArrowUp") {
-    moveDirection("up");
-  }
-
-  if (key === "ArrowDown") {
-    moveDirection("down");
-  }
+  
 
   // when moving the prince using the keyboard you can call the already implemented
   // function `moveDirection` with the STRING as PARAMETER `left`, `right`, `up`, `down`.
