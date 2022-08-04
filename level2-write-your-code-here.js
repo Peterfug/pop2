@@ -13,28 +13,28 @@
 
     HINT: use the BROWSER DEVELOPER TOOLS.
 */
-let firstTask = true;
-let secondTask = true;
-let thirdTask = true;
-let fourthTask = true;
-function level2Move(
-  elementLeftOfPrince,
-  elementRightOfPrince,
-  elementUpOfPrince,
-  elementDownOfPrince
-) {
-  if (firstTask) {
+let moveDown = true;
+let moveRight = true;
+let moveUp = true;
+let moveZigZag = true;
+
+function level2Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince) {
+
+  if (moveDown) {
     down(elementDownOfPrince);
-  }
-  if (secondTask) {
+  };
+
+  if (moveRight) {
     right(elementRightOfPrince);
-  }
-  if (thirdTask) {
+  };
+
+  if (moveUp) {
     up(elementUpOfPrince);
-  }
-  if (fourthTask) {
-    zigZag(elementLeftOfPrince,);
-  }
+  };
+
+  if (moveZigZag) {
+    ZigZag(elementLeftOfPrince);
+  };
 
   // the prince should move down first, the problem is that the amount
   // of times to move changes from one level to another. Try to find out
@@ -60,62 +60,68 @@ function level2Move(
 }
 
 function down(elementDownOfPrince) {
-  if (elementDownOfPrince < 12) {
+  if (elementDownOfPrince === 11) {
     moveDirection("down");
-    firstTask = true;
-    secondTask = false;
-    thirdTask = false;
-    fourthTask = false;
+    moveDown = true;
+    moveRight = false;
+    moveUp = false;
+    moveZigZag = false;
   } else {
-    firstTask = false;
-    secondTask = true;
-    thirdTask = false;
-    fourthTask = false;
-  }
-}
+    moveDown = false;
+    moveRight = true;
+    moveUp = false;
+    moveZigZag = false;
+  };
+};
 
 function right(elementRightOfPrince) {
-  if (elementRightOfPrince < 12) {
+  if (elementRightOfPrince === 11) {
     moveDirection("right");
-    firstTask = false;
-    secondTask = true;
-    thirdTask = false;
-    fourthTask = false;
+    moveDown = false;
+    moveRight = true;
+    moveUp = false;
+    moveZigZag = false;
   } else {
-    firstTask = false;
-    secondTask = false;
-    thirdTask = true;
-    fourthTask = false;
-  }
-}
+    moveDown = false;
+    moveRight = false;
+    moveUp = true;
+    moveZigZag = false;
+  };
+};
 
 function up(elementUpOfPrince) {
-  if (elementUpOfPrince < 12) {
+  if (elementUpOfPrince === 11) {
     moveDirection("up");
-    firstTask = false;
-    secondTask = false;
-    thirdTask = true;
-    fourthTask = false;
+    moveDown = false;
+    moveRight = false;
+    moveUp = true;
+    moveZigZag = false;
   } else {
-    firstTask = false;
-    secondTask = false;
-    thirdTask = false;
-    fourthTask = true;
-  }
-}
+    moveDown = false;
+    moveRight = false;
+    moveUp = false;
+    moveZigZag = true;
+  };
+};
 
-function zigZag(elementLeftOfPrince,) {
-  if (elementLeftOfPrince < 12) {
-    moveDirection("left");
-
-    firstTask = false;
-    secondTask = false;
-    thirdTask = false;
-    fourthTask = true;
+function ZigZag(elementLeftOfPrince) {
+  if (elementLeftOfPrince === 11) {
+    for (let i = 0; i < 2; i++) {
+        moveDirection("left");
+    };
+    moveDirection("up");
+    for (let i = 0; i < 2; i++) {
+        moveDirection("left");
+    };
+    moveDirection("down");
+    moveDown = false;
+    moveRight = false;
+    moveUp = false;
+    moveZigZag = true;
   } else {
-    firstTask = false;
-    secondTask = false;
-    thirdTask = true;
-    fourthTask = true;
-  }
-}
+    moveDown = false;
+    moveRight = false;
+    moveUp = false;
+    moveZigZag = false;
+  };
+};
