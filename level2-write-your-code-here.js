@@ -17,6 +17,7 @@ let firstTask = true;
 let secondTask = true;
 let thirdTask = true;
 let fourthTask = true;
+let fifthTask = true;
 function level2Move(
   elementLeftOfPrince,
   elementRightOfPrince,
@@ -41,6 +42,9 @@ function level2Move(
   console.log(
     `MI van körülötted le:${elementDownOfPrince} fel:${elementUpOfPrince} jobbra:${elementRightOfPrince} balra:${elementLeftOfPrince}`
   );
+  if (fifthTask){
+    princess()
+  }
 
   // the prince should move down first, the problem is that the amount
   // of times to move changes from one level to another. Try to find out
@@ -73,11 +77,13 @@ function down(elementDownOfPrince) {
     secondTask = false;
     thirdTask = false;
     fourthTask = false;
+    fifthTask = false;
   } else {
     firstTask = false;
     secondTask = true;
     thirdTask = false;
     fourthTask = false;
+    fifthTask = false;
   }
 }
 
@@ -88,11 +94,13 @@ function right(elementRightOfPrince) {
     secondTask = true;
     thirdTask = false;
     fourthTask = false;
+    fifthTask = false;
   } else {
     firstTask = false;
     secondTask = false;
     thirdTask = true;
     fourthTask = false;
+    fifthTask = false;
   }
 }
 
@@ -103,11 +111,13 @@ function up(elementUpOfPrince) {
     secondTask = false;
     thirdTask = true;
     fourthTask = false;
+    fifthTask = false;
   } else {
     firstTask = false;
     secondTask = false;
     thirdTask = false;
     fourthTask = true;
+    fifthTask = false;
   }
 }
 
@@ -117,6 +127,7 @@ function ZigZag(elementDownOfPrince, elementUpOfPrince) {
     secondTask = false;
     thirdTask = false;
     fourthTask = false;
+    fifthTask = true;
   } else {
     moveDirection("left");
     console.log("most balra lépek");
@@ -135,6 +146,24 @@ function ZigZag(elementDownOfPrince, elementUpOfPrince) {
     secondTask = false;
     thirdTask = false;
     fourthTask = true;
+    fifthTask = false;
   }
+}
+
+function princess() {
+  for (let index = 0; index < 50; index++) {
+    moveDirection("left");
+    moveDirection("down");
+    moveDirection("right");
+    moveDirection("down");
+    firstTask = false;
+    secondTask = false;
+    thirdTask = false;
+    fourthTask = false;
+    fifthTask = true;
+  }
+ 
+  
+  
 }
 
